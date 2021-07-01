@@ -18,11 +18,27 @@ function playRound(playerSelection, computerSelection) {
     if (checkWinner === 0) {
         playerScores.computer++
             document.getElementById("demo").innerHTML = playerScores.player + "," + playerScores.computer;
-        document.getElementById("demo3").innerHTML = compOptions[playerVal] + " loses to " + compOptions[compVal];
+        if (playerScores.computer == 5) {
+            document.getElementById("demo3").innerHTML = ''
+            alert("YOU LOSE! TRY AGAIN?")
+            playerScores.player = 0;
+            playerScores.computer = 0;
+            document.getElementById("demo").innerHTML = playerScores.player + "," + playerScores.computer;
+        } else {
+            document.getElementById("demo3").innerHTML = 'Oh no! ' + compOptions[playerVal] + " loses to " + compOptions[compVal];
+        }
     } else if (checkWinner === 1) {
         playerScores.player++
             document.getElementById("demo").innerHTML = playerScores.player + "," + playerScores.computer;
-        document.getElementById("demo3").innerHTML = compOptions[playerVal] + " beats " + compOptions[compVal];
+        if (playerScores.player == 5) {
+            document.getElementById("demo3").innerHTML = ''
+            alert("YOU WIN! TRY AGAIN?")
+            playerScores.player = 0;
+            playerScores.computer = 0;
+            document.getElementById("demo").innerHTML = playerScores.player + "," + playerScores.computer;
+        } else {
+            document.getElementById("demo3").innerHTML = 'Yay! ' + compOptions[playerVal] + " beats " + compOptions[compVal];
+        }
     } else {
         document.getElementById("demo3").innerHTML = 'It\'s a tie!';
     }
@@ -56,6 +72,6 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-const playerSelection = prompt("Rock, Paper or Scissors");
+const playerSelection = 'rock'
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection))
+//console.log(playRound(playerSelection, computerSelection))
