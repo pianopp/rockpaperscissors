@@ -19,7 +19,7 @@ function playRound(playerSelection, computerSelection) {
         playerScores.computer++
             document.getElementById("demo").innerHTML = playerScores.player + "," + playerScores.computer;
         if (playerScores.computer == 5) {
-            document.getElementById("demo3").innerHTML = ''
+            document.getElementById("demo3").innerHTML = 'Let\'s play'
             alert("YOU LOSE! TRY AGAIN?")
             playerScores.player = 0;
             playerScores.computer = 0;
@@ -31,7 +31,7 @@ function playRound(playerSelection, computerSelection) {
         playerScores.player++
             document.getElementById("demo").innerHTML = playerScores.player + "," + playerScores.computer;
         if (playerScores.player == 5) {
-            document.getElementById("demo3").innerHTML = ''
+            document.getElementById("demo3").innerHTML = 'Let\'s play'
             alert("YOU WIN! TRY AGAIN?")
             playerScores.player = 0;
             playerScores.computer = 0;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="styles.css" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8">
@@ -10,13 +11,27 @@
 </head>
 
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p id="demo"></p>
-    <p id="demo2"></p>
-    <button id="rockButton" onclick="playRound('rock', computerPlay())">Rock</button>
-    <button id="paperButton" onclick="playRound('paper', computerPlay())">Paper</button>
-    <button id="scissorsButton" onclick="playRound('scissors', computerPlay())">Scissors</button>
-    <p id="demo3"></p>
+    <div class="window center" style="width: 300px">
+        <div class="title-bar" style="width: 300px">
+            <div class="title-bar-text">Rock Paper scissors</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div id="game">
+                <p id="demo"></p>
+                <div id="buttons">
+                    <button id="rockButton" class="button" onclick="playRound('rock', computerPlay())">Rock</button>
+                    <button id="paperButton" class="button" onclick="playRound('paper', computerPlay())">Paper</button>
+                    <button id="scissorsButton" class="button" onclick="playRound('scissors', computerPlay())">Scissors</button>
+                </div>
+                <p id="demo3">Let's play</p>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./game.js"></script>
 
